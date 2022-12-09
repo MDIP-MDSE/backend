@@ -37,7 +37,7 @@ public class Startup
                 options.UseSqlServer(Configuration.GetConnectionString("prod")));
         else
             services.AddDbContext<MMOContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("prod")));
+                options.UseSqlServer(Configuration.GetConnectionString("dev")));
         
         services.BuildServiceProvider().GetService<MMOContext>().Database.Migrate();
     }
